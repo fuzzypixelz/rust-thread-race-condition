@@ -4,16 +4,15 @@ set -xeo pipefail
 
 readonly basename=rust_thread_race_condition
 readonly durations=(
-    100
-    90
-    80
-    70
-    60
-    50
-    40
-    30
-    20
     10
+    9
+    8
+    7
+    6
+    5
+    4
+    2
+    1
     0
 )
 
