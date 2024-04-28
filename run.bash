@@ -11,7 +11,6 @@ cp target/release/"$basename".dll .
 
 clang -o test test.c target/release/"$basename".dll.lib
 
-export RUST_BACKTRACE=1
-for duration in $(seq 1 20); do
+for duration in $(seq 0 20); do
     ./test "$duration" || echo "info: test failed with duration ${duration}"
 done
