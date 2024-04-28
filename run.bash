@@ -2,7 +2,7 @@
 
 set -xeo pipefail
 
-readonly basename=librust_thread_race_condition
+readonly basename=rust_thread_race_condition
 
 cargo build --release
 cp target/release/"$basename".dll.lib .
