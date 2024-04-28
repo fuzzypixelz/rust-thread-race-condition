@@ -14,6 +14,7 @@ impl Dummy {
     }
 }
 
+#[no_mangle]
 pub extern "C" fn init() {
     let handle = thread::spawn(|| {
         thread::sleep(Duration::from_secs(60));
