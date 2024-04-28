@@ -27,4 +27,5 @@ pub extern "C" fn init(timeout: libc::c_int) {
 extern "C" fn handler() {
     let handle = DUMMY.0.lock().unwrap().take().unwrap();
     handle.join().unwrap();
+    eprintln!("Successfuly joined the thread!");
 }
