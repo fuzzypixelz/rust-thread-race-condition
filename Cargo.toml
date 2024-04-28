@@ -9,3 +9,6 @@ libc = "0.2.153"
 
 [lib]
 crate-type = ["cdylib"]
+
+[profile.release]
+debug = true
