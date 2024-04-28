@@ -1,18 +1,14 @@
 #!/usr/bin/env bash
 
-set -xeo pipefail
+set -eo pipefail
 
 readonly basename=rust_thread_race_condition
 readonly durations=(
-    10
-    9
-    8
-    7
-    6
-    5
-    4
-    2
-    1
+    1000000
+    100000
+    10000
+    1000
+    100
     0
 )
 
@@ -23,6 +19,7 @@ cp target/release/"$basename".dll .
 
 clang -o test test.c target/release/"$basename".dll.lib
 
+export RUST_BACKTRACE=1
 for duration in "${durations[@]}"; do
-    ./test "$duration" || echo "info: test failed with duration $duration"
+    ./test "$duration" || echo "info: test failed with duration ${duration}ns"
 done

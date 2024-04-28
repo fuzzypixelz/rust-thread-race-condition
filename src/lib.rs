@@ -9,7 +9,7 @@ pub static HANDLE: Mutex<OnceLock<JoinHandle<()>>> = Mutex::new(OnceLock::new())
 #[no_mangle]
 pub extern "C" fn init(timeout: libc::c_int) {
     let handle = thread::spawn(move || {
-        thread::sleep(Duration::from_millis(timeout as u64));
+        thread::sleep(Duration::from_nanos(timeout as u64));
     });
     HANDLE.lock().unwrap().set(handle).unwrap();
 
