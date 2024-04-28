@@ -12,19 +12,14 @@ cp target/release/"$basename".dll .
 clang -o test test.c target/release/"$basename".dll.lib
 
 set +e
-./test 60
-./test 50
-./test 40
-./test 30
-./test 20
-./test 10
-./test 9
-./test 8
-./test 7
-./test 6
-./test 5
-./test 4
-./test 3
-./test 2
-./test 1
+./test 1000
+./test 900
+./test 800
+./test 700
+./test 600
+./test 500
+./test 400
+./test 300
+./test 200
+./test 100
 ./test 0
