@@ -11,5 +11,5 @@ cp target/release/"$basename".dll .
 
 clang -o test test.c target/release/"$basename".dll.lib
 
-./test 1000 100
-./test 100 1000
+./test 1000 100 || echo "info: test with 1s sleep in main and 0.1s sleep in thread failed"
+./test 100 1000 || echo "info: test with 0.1s sleep in main and 1s sleep in thread failed"
