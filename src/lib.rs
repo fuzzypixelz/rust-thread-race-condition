@@ -17,5 +17,4 @@ pub extern "C" fn init(n: libc::c_int) {
 extern "C" fn handler() {
     let handle = HANDLE.lock().unwrap().take().unwrap();
     handle.join().unwrap();
-    eprintln!("Successfuly joined the thread!");
 }
