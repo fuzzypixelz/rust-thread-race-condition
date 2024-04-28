@@ -11,6 +11,7 @@ cp target/release/"$basename".dll .
 
 clang -o test test.c target/release/"$basename".dll.lib
 
+set +e
 for _ in {1..10}; do
   ./test
 done
