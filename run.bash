@@ -10,4 +10,7 @@ cp target/release/"$basename".dll.lib .
 cp target/release/"$basename".dll .
 
 clang -o test test.c target/release/"$basename".dll.lib
-./test
+
+for _ in {1..10}; do
+  ./test
+done
