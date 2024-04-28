@@ -1,7 +1,7 @@
-extern void init(void);
+extern void init(int);
 
-int main(void)
+int main(const int argc, const char *argv[argc])
 {
-    init();
+    init(argv[1]);
     return 0;
 }

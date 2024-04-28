@@ -15,9 +15,9 @@ impl Dummy {
 }
 
 #[no_mangle]
-pub extern "C" fn init() {
-    let handle = thread::spawn(|| {
-        thread::sleep(Duration::from_secs(60));
+pub extern "C" fn init(timeout: libc::c_int) {
+    let handle = thread::spawn(move || {
+        thread::sleep(Duration::from_secs(timeout as u64));
     });
     DUMMY.0.lock().unwrap().set(handle).unwrap();
 
