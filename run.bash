@@ -11,6 +11,5 @@ cp target/release/"$basename".dll .
 
 clang -o test test.c target/release/"$basename".dll.lib
 
-for duration in $(seq 0 20); do
-    ./test "$duration" || echo "info: test failed with duration ${duration}"
-done
+./test 1000 100
+./test 100 1000
