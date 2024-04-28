@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -xeo pipefail
+
 readonly basename=librust_thread_race_condition
 
 cargo build --release
